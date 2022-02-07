@@ -1,0 +1,145 @@
+/*==========================
+=   CUSTOM PROPERTIES      = 
+============================*/
+
+:root{
+  --white: hsl(0, 0%, 100%);
+ --light-gray: hsl(212, 45%, 89%);
+ --grayish-blue: hsl(220, 15%, 55%);
+ --dark-blue: hsl(218, 44%, 22%);
+ --font: 'Outfit', sans-serif;
+ --font-size: 15px;
+}
+
+/*==========================
+=          RESET           = 
+============================*/
+
+html {
+  box-sizing: border-box;
+  font-family: var(--font);
+  font-size: 16px;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* Page Styles */
+
+body{
+  background-color: var(--light-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: .3s ease all;
+}
+
+body.dark{
+  background-color: #111;
+}
+
+.card{
+  background-color: var(--white);
+  border-radius: 20px;
+  width: 320px;
+  height: 500px;
+  padding: 15px;
+  text-align: center;
+  filter: drop-shadow(2px 4px 56px rgba(31, 50, 81, .2));
+  transition: .3s ease all;
+}
+
+body.dark .card{
+  background-color: #282c34;
+  color: #61dafb;
+  filter: drop-shadow(2px 4px 56px rgba(210, 246, 255, 0.1));
+}
+
+.card>img{
+  border-radius: 10px;
+}
+
+card>p{
+  font-weight: 400;
+  font-size: var(--font-size);
+}
+
+.attribution{
+  position: absolute;
+  bottom: 0;
+  padding: 20px 0;
+}
+
+body.dark .attribution{
+  /* background-color: #282c34; */
+  color: #61dafb;
+}
+
+body.dark .attribution a{
+  /* background-color: #282c34; */
+  color: var(--light-gray);
+}
+
+
+/* Dark Mode */
+
+#switch{
+  position: absolute;
+  right: 50;
+  top: 10%;
+}
+
+.switch{
+  background: #343D5B;
+  border-radius: 1000px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  position: relative;
+  border: none;
+}
+
+.switch>span{
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: #fff;
+}
+
+.switch::after{
+  content: '';
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #fff;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: .3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, .2);
+}
+
+.switch.active{
+  background: orange;
+  color: black;
+}
+
+.switch.active::after{
+  right: 0;
+  left: unset;
+}
